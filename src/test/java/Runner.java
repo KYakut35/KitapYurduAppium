@@ -9,8 +9,7 @@ import java.util.*;
 public class Runner extends Hook{
     Methods methods = new Methods();
 
-    //kyakut35@gmail.com
-    //12345678
+
 
     @Test
     public void openApp() throws InterruptedException {
