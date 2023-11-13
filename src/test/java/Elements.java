@@ -3,11 +3,11 @@ import org.openqa.selenium.By;
 public class Elements {
 
 
+    // Used Elements
     static By laterButton = By.id("com.mobisoft.kitapyurdu:id/btnLaterOn");
     static By searchButton = By.id("com.mobisoft.kitapyurdu:id/navigation_search");
     static By searchBookField = By.id("com.mobisoft.kitapyurdu:id/searchEditText");
     static By firstBookFromSearchList = By.xpath("//android.widget.ListView[@resource-id=\"com.mobisoft.kitapyurdu:id/searchListView\"]/android.widget.LinearLayout[1]");
-    static By selectFirstOption = By.xpath("//android.widget.TextView[@resource-id=\"com.mobisoft.kitapyurdu:id/list_content\" and @text=\"harry potter\"]");
     static By sortButton = By.id("com.mobisoft.kitapyurdu:id/sortButton");
     static By mostEvaluatedCheckBox = By.xpath("(//android.view.ViewGroup[@resource-id=\"com.mobisoft.kitapyurdu:id/containerView\"])[9]");
     static By selectRandomBook = By.xpath("//android.widget.ImageView[@content-desc=\"Ürün görseli\"]");
