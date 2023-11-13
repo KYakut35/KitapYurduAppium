@@ -14,33 +14,35 @@ public class Runner extends Hook{
     @Test
     public void openApp() throws InterruptedException {
         methods.wait(10);
-        methods.clickElement(Elements.laterButton);
+        methods.clickElement(Elements.laterButton); //skip popup
         methods.wait(2);
-        methods.clickElement(Elements.laterButton);
+        methods.clickElement(Elements.laterButton); //skip popup
         methods.wait(2);
-        methods.clickElement(Elements.searchButton);
+        methods.clickElement(Elements.searchButton); //click search icon
         methods.wait(2);
-        methods.clickElement(Elements.searchBookField);
+        methods.clickElement(Elements.searchBookField); // click search input
         methods.wait(1);
-        methods.writeText(Elements.searchBookField,"Harry Potter");
+        methods.writeText(Elements.searchBookField,"Harry Potter"); // send keys
         methods.wait(2);
-        methods.isVisible(Elements.firstBookFromSearchList,"Harry Potter");
+        System.out.println();
+        methods.isVisible(Elements.firstBookFromSearchList,"harry potter") ; // Check Harry Potter is contained or not
         methods.wait(2);
-        methods.clickElement(Elements.firstBookFromSearchList);
+        methods.clickElement(Elements.firstBookFromSearchList); // select first dropdown item
         methods.wait(2);
-        methods.clickElement(Elements.sortButton);
+        methods.clickElement(Elements.sortButton); // click sort button
         methods.wait(2);
-        methods.clickElement(Elements.mostEvaluatedCheckBox);
+        methods.clickElement(Elements.mostEvaluatedCheckBox); // click most evaluated checkbox
         methods.wait(2);
 
-        List<WebElement> booksList = methods.findAllElements(Elements.selectRandomBook);
+        List<WebElement> booksList = methods.findAllElements(Elements.selectRandomBook); // get all elements in screen
+        // I cant get all possible books because I don't know how to scroll the emulator.
         Random random = new Random();
         int randomBookIndex = random.nextInt(4);
         WebElement randomBook = booksList.get(randomBookIndex);
         methods.clickElement(randomBook);
         methods.wait(2);
 
-        methods.isDisplayed(Elements.isBookImageVisible);
+        methods.isDisplayed(Elements.isBookImageVisible,"Book Detail Page ");
         methods.wait(2);
 
         String bookPriceInBookDetailsPage = methods.getText(Elements.getBookPrice);
@@ -70,7 +72,7 @@ public class Runner extends Hook{
         methods.clickElement(Elements.deleteBookPopUp);
         methods.wait(2);
 
-        methods.isDisplayed(Elements.cartMessage);
+        methods.isDisplayed(Elements.cartMessage,"Cart Empty Message");
         methods.wait(2);
 
         methods.clickElement(Elements.navigateToHomeButton);

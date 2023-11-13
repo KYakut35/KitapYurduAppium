@@ -47,7 +47,8 @@ public class Methods extends Hook {
             System.out.println(text + " included.");
         }
         else {
-            System.out.println("Not included.");
+            System.out.println(text+ " Not included.");
+            System.out.println("Actual : " + checkValue);
         }
     }
 
@@ -70,12 +71,12 @@ public class Methods extends Hook {
         }
     }
 
-    public void isDisplayed(By element) {
+    public void isDisplayed(By element,String text) {
         if (androidDriver.findElement(element).isDisplayed()) {
-            System.out.println("Element visible");
+            System.out.println(text + " visible");
         }
         else {
-            System.out.println("Element is not visible");
+            System.out.println(text + " is not visible");
         }
     }
 
