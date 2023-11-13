@@ -10,11 +10,15 @@ import java.util.List;
 public class Methods extends Hook {
 
 
-    private Logger logger = LoggerFactory.getLogger(getClass());
+    public final static Logger logger = LoggerFactory.getLogger(Methods.class);
 
     public void clickElement(By element) {
         androidDriver.findElement(element).click();
         logger.info("This " + element + " has been clicked.");
+    }
+
+    public void clickElement(WebElement element) {
+        element.click();
     }
 
     public void writeText(By element , String text) {

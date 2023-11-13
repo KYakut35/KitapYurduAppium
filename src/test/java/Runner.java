@@ -36,7 +36,7 @@ public class Runner extends Hook{
         List<WebElement> booksList = methods.findAllElements(Elements.selectRandomBook);
         Random random = new Random();
         int randomBookIndex = random.nextInt(4);
-        By randomBook = Elements.selectRandomBook;
+        WebElement randomBook = booksList.get(randomBookIndex);
         methods.clickElement(randomBook);
         methods.wait(2);
 
